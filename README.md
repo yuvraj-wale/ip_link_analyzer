@@ -43,7 +43,7 @@ This project is a software-based tool designed to analyze and classify data tran
 
 1. Start the IP Link Analyzer:
    ```bash
-   python main.py
+    sudo python main.py
    ```
 
 2. The Streamlit dashboard will open in your default web browser, displaying real-time analysis results.
