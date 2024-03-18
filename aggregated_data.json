@@ -1,0 +1,50 @@
+{
+    "protocol_counts": {
+        "UDP": 407,
+        "TCP": 1190
+    },
+    "application_protocol_counts": {
+        "RTP": 27,
+        "DHCP": 332,
+        "HTTPS": 458,
+        "HTTPS (TLS Application Data)": 284,
+        "IMAPS": 448,
+        "DNS": 48
+    },
+    "encryption_counts": {
+        "Unencrypted": 407,
+        "Encrypted": 1190
+    },
+    "country_traffic": {
+        "Unknown-Unknown": 382,
+        "Unknown-United States": 420,
+        "United States-Unknown": 438,
+        "Unknown-India": 120,
+        "Unknown-Singapore": 15,
+        "India-Unknown": 120,
+        "Singapore-Unknown": 19,
+        "Unknown-Australia": 2,
+        "Australia-Unknown": 2,
+        "None-Unknown": 12,
+        "Unknown-None": 12,
+        "Unknown-United Kingdom": 29,
+        "United Kingdom-Unknown": 26
+    },
+    "port_traffic": {
+        "Unknown-Unknown": 334,
+        "Unknown-HTTPS": 375,
+        "HTTPS-Unknown": 392,
+        "Unknown-IMAPS": 223,
+        "Unknown-DNS": 24,
+        "DNS-Unknown": 24,
+        "IMAPS-Unknown": 225
+    },
+    "traffic_between_countries": {
+        "Traffic not between target countries": 1597
+    },
+    "bytes_per_second": 4820.030282105787,
+    "packets_per_second": 17.64146438063172,
+    "total_bytes": 436335,
+    "total_packets": 1597,
+    "encrypted_percentage": 74.51471509079524
+}
