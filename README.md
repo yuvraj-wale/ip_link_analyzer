@@ -29,7 +29,7 @@ This project is a software-based tool designed to analyze and classify data tran
 
 4. Download the GeoLite2 database:
    - Go to the [MaxMind GeoLite2 page](https://dev.maxmind.com/geoip/geoip2/geolite2/).
-   - Sign up for a free account and download the GeoLite2 City database.
+   - Sign up for a free account and download the GeoLite2 Country database.
    - Extract the downloaded file and note the path to the `GeoLite2-Country.mmdb` file.
 
 5. Configure the `settings.py` file:
