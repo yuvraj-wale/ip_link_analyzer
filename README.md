@@ -9,6 +9,11 @@ This project is a software-based tool designed to analyze and classify data tran
 - Calculation of link rate metrics (bytes/sec, packets/sec, etc.)
 - Real-time dashboard visualization using Streamlit
 
+## YouTube Demo
+Watch the demo of the IP Link Analyzer/Classifier on YouTube:
+
+[![IP Link Analyzer/Classifier Demo](https://img.youtube.com/vi/UkKU7dcasNc/0.jpg)](https://www.youtube.com/watch?v=UkKU7dcasNc)
+
 ## Installation
 
 1. Clone the repository:
