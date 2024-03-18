@@ -48,6 +48,26 @@ This project is a software-based tool designed to analyze and classify data tran
 
 2. The Streamlit dashboard will open in your default web browser, displaying real-time analysis results.
 
+## Testing with iperf3
+
+1. Install `iperf3` on your machine:
+   - On macOS: `brew install iperf3`
+   - On Linux: `sudo apt-get install iperf3`
+   - On Windows: Download from [iperf.fr](https://iperf.fr/iperf-download.php)
+
+2. Start the `iperf3` server in a separate terminal:
+   ```bash
+   iperf3 -s
+   ```
+
+3. Run the `iperf3` client to generate traffic (adjust the parameters as needed):
+   ```bash
+   iperf3 -c 127.0.0.1 -t 240 -b 10G
+   ```
+   This command generates 10 Gbps of traffic for 240 seconds to the localhost, where the IP Link Analyzer is running.
+
+4. Observe the traffic analysis results in the Streamlit dashboard.
+
 ## Dependencies
 - Python 3
 - Scapy
