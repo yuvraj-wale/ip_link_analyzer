@@ -14,7 +14,7 @@ This project is a software-based tool designed to analyze and classify data tran
 1. Clone the repository:
    ```bash
    git clone https://github.com/yuvraj-wale/ip_link_analyzer.git
-   cd ip-link-analyzer
+   cd ip_link_analyzer
    ```
 
 2. Install the required Python packages:
