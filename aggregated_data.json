@@ -1,50 +1,49 @@
 {
     "protocol_counts": {
-        "UDP": 407,
-        "TCP": 1190
+        "TCP": 1675,
+        "UDP": 27,
+        "ICMP": 6
     },
     "application_protocol_counts": {
-        "RTP": 27,
-        "DHCP": 332,
-        "HTTPS": 458,
-        "HTTPS (TLS Application Data)": 284,
-        "IMAPS": 448,
-        "DNS": 48
+        "HTTPS": 1601,
+        "HTTPS (TLS Application Data)": 60,
+        "DNS": 6,
+        "DHCP": 2,
+        "RTP": 10,
+        "HTTP": 14,
+        "Unknown": 15
     },
     "encryption_counts": {
-        "Unencrypted": 407,
-        "Encrypted": 1190
+        "Encrypted": 1661,
+        "Unencrypted": 47
     },
     "country_traffic": {
-        "Unknown-Unknown": 382,
-        "Unknown-United States": 420,
-        "United States-Unknown": 438,
-        "Unknown-India": 120,
-        "Unknown-Singapore": 15,
-        "India-Unknown": 120,
-        "Singapore-Unknown": 19,
-        "Unknown-Australia": 2,
-        "Australia-Unknown": 2,
-        "None-Unknown": 12,
-        "Unknown-None": 12,
-        "Unknown-United Kingdom": 29,
-        "United Kingdom-Unknown": 26
+        "Unknown-United States": 546,
+        "United States-Unknown": 1000,
+        "Unknown-Unknown": 12,
+        "Unknown-India": 41,
+        "India-Unknown": 50,
+        "Unknown-Germany": 32,
+        "Germany-Unknown": 27
     },
     "port_traffic": {
-        "Unknown-Unknown": 334,
-        "Unknown-HTTPS": 375,
-        "HTTPS-Unknown": 392,
-        "Unknown-IMAPS": 223,
-        "Unknown-DNS": 24,
-        "DNS-Unknown": 24,
-        "IMAPS-Unknown": 225
+        "Unknown-HTTPS": 605,
+        "HTTPS-Unknown": 1071,
+        "Unknown-DNS": 3,
+        "DNS-Unknown": 3,
+        "Unknown-Unknown": 12,
+        "Unknown-HTTP": 8,
+        "HTTP-Unknown": 6
     },
     "traffic_between_countries": {
-        "Traffic not between target countries": 1597
+        "Traffic not between target countries": 1708
     },
-    "bytes_per_second": 4820.030282105787,
-    "packets_per_second": 17.64146438063172,
-    "total_bytes": 436335,
-    "total_packets": 1597,
-    "encrypted_percentage": 74.51471509079524
+    "bytes_per_second": 81084.96309314587,
+    "bits_per_second": 648679.7047451669,
+    "megabits_per_second": 0.6486797047451669,
+    "gigabits_per_second": 0.0006486797047451669,
+    "packets_per_second": 1228.5600468658465,
+    "total_bytes": 66,
+    "total_packets": 1,
+    "encrypted_percentage": 100.0
 }
