@@ -169,7 +169,7 @@ def classify_port(parsed_data):
     return f'{src_port_classification}-{dst_port_classification}'
 
 
-def classify_traffic_between_countries(parsed_data, target_countries):
+def classify_traffic_between_countries(parsed_data, target_country_pairs):
     source_ip = parsed_data.get('source_ip')
     destination_ip = parsed_data.get('destination_ip')
 
@@ -182,11 +182,12 @@ def classify_traffic_between_countries(parsed_data, target_countries):
         source_country = 'Unknown'
         destination_country = 'Unknown'
 
-    # Check if the traffic is between the target countries
-    if source_country in target_countries and destination_country in target_countries:
-        return f'Traffic between {source_country} & {destination_country}'
-    else:
-        return 'Traffic not between target countries'
+    # Check if the traffic is between any of the target country pairs
+    for country_pair in target_country_pairs:
+        if (source_country, destination_country) == country_pair or (destination_country, source_country) == country_pair:
+            return f'Traffic between {source_country} & {destination_country}'
+
+    return 'Traffic not between target countries'
 
 def classify_packet(parsed_data):
     classifications = {
