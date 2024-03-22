@@ -37,7 +37,9 @@ def main():
         st.bar_chart(df_port_traffic.set_index('Port Traffic'))
 
         st.header("Traffic Between Countries")
-        df_traffic_between_countries = pd.DataFrame(list(data['traffic_between_countries'].items()), columns=['Traffic Between Countries', 'Count'])
+        # Convert dictionary keys from tuples to strings for display
+        traffic_between_countries = {f"{key[0]} & {key[1]}": value for key, value in data['traffic_between_countries'].items()}
+        df_traffic_between_countries = pd.DataFrame(list(traffic_between_countries.items()), columns=['Traffic Between Countries', 'Count'])
         st.bar_chart(df_traffic_between_countries.set_index('Traffic Between Countries'))
         
         # Pie chart for encrypted percentage
@@ -55,6 +57,9 @@ def main():
         st.header("Link Rate Metrics")
         link_rate_metrics = {
             'Bytes per Second': data["bytes_per_second"],
+            'Bits per Second': data["bits_per_second"],
+            'Megabits per Second': data["megabits_per_second"],  # Add Mbps to the metrics
+            'Gigabits per Second': data["gigabits_per_second"],
             'Packets per Second': data["packets_per_second"],
             'Total Bytes': data["total_bytes"],
             'Total Packets': data["total_packets"],
