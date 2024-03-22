@@ -26,11 +26,13 @@ class LinkRateAnalyzer:
     def get_metrics(self):
         elapsed_time = time.time() - self.start_time
         bytes_per_second = self.total_bytes / elapsed_time
+        bits_per_second = bytes_per_second * 8  # Calculate bits per second
         packets_per_second = self.total_packets / elapsed_time
         encrypted_percentage = (self.encrypted_packets / self.total_packets) * 100 if self.total_packets > 0 else 0
         unencrypted_percentage = (self.unencrypted_packets / self.total_packets) * 100 if self.total_packets > 0 else 0
         return {
             'bytes_per_second': bytes_per_second,
+            'bits_per_second': bits_per_second,  # Add bits per second to the metrics
             'packets_per_second': packets_per_second,
             'total_bytes': self.total_bytes,
             'total_packets': self.total_packets,
