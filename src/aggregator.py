@@ -1,14 +1,6 @@
 from collections import defaultdict
 import json
 import time
-
-class TrafficAggregator:
-    def __init__(self):
-        self.protocol_counts = defaultdict(int)
-        self.application_protocol_counts = defaultdict(int)  # Add this line
-        self.encryption_counts = defaultdict(int)
-        self.country_traffic = defaultdict(int)
-        self.port_traffic = defaultdict(int)
 from collections import defaultdict
 import json
 import time
