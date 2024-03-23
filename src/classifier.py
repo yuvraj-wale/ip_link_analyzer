@@ -1,12 +1,7 @@
 import re
 import geoip2.database
-import os
-import sys
-
-root_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(root_directory)
-
 import settings
+
 def classify_application_protocol(parsed_data):
     protocol = parsed_data.get('protocol')
     src_port = parsed_data.get('source_port')

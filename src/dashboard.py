@@ -69,7 +69,7 @@ def main():
         st.table(df_link_rate_metrics.set_index('Metric'))
 
         time.sleep(5)  # Refresh data every 5 seconds
-        st.experimental_rerun()
+        st.rerun()
 
 if __name__ == "__main__":
     main()
