@@ -38,8 +38,8 @@ def main():
 
         st.header("Traffic Between Countries")
         # Convert dictionary keys from tuples to strings for display
-        traffic_between_countries = {f"{key[0]} & {key[1]}": value for key, value in data['traffic_between_countries'].items()}
-        df_traffic_between_countries = pd.DataFrame(list(traffic_between_countries.items()), columns=['Traffic Between Countries', 'Count'])
+        # traffic_between_countries = {f"{key[0]} & {key[1]}": value for key, value in data['traffic_between_countries'].items()}
+        df_traffic_between_countries = pd.DataFrame(list(data['country_traffic'].items()), columns=['Traffic Between Countries', 'Count'])
         st.bar_chart(df_traffic_between_countries.set_index('Traffic Between Countries'))
         
         # Pie chart for encrypted percentage
