@@ -1,14 +1,14 @@
 import os
 import subprocess
 import threading
-import capture
-import visualizer
+from src import capture, visualizer
 
 def start_capture():
     capture.start_capture()  # Continuous packet capture and analysis
 
 def start_visualization():
-    subprocess.Popen(['streamlit', 'run', os.path.join(os.path.dirname(__file__), 'dashboard.py')])
+    visualizer.run_visualization()
+    # subprocess.Popen(['streamlit', 'run', os.path.join(os.path.dirname(__file__), 'dashboard.py')])
 
     # while True:
     #     visualizer.visualize_data()  # Update visualization with latest data

@@ -68,7 +68,7 @@ def main():
         df_link_rate_metrics = pd.DataFrame(list(link_rate_metrics.items()), columns=['Metric', 'Value'])
         st.table(df_link_rate_metrics.set_index('Metric'))
 
-        time.sleep(5)  # Refresh data every 5 seconds
+        time.sleep(2)  # Refresh data every 5 seconds
         st.rerun()
 
 if __name__ == "__main__":
