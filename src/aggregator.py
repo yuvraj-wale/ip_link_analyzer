@@ -1,9 +1,6 @@
 from collections import defaultdict
 import json
 import time
-from collections import defaultdict
-import json
-import time
 
 class TrafficAggregator:
     def __init__(self):
