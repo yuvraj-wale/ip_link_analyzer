@@ -70,7 +70,3 @@ class TrafficAggregator:
     def export_to_json(self, filename):
         with open(filename, 'w') as f:
             json.dump(self.get_aggregated_data(), f, indent=4)
-        self.total_bytes = 0
-        self.total_packets = 0
-        self.encrypted_packets = 0
-        self.start_time = time.time()
