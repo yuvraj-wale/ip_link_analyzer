@@ -19,8 +19,6 @@ def start_capture():
     print("Starting packet capture...")
     filter = settings.CAPTURE_FILTER
     count = settings.CAPTURE_COUNT
-    save_to_file = settings.CAPTURE_SAVE_TO_FILE
-    file_path = settings.CAPTURE_FILE_PATH
     timeout = settings.CAPTURE_TIMEOUT
     export_interval = 2  # Interval in seconds for exporting data
     iface = settings.CAPTURE_INTERFACE
@@ -31,8 +29,6 @@ def start_capture():
 
     def custom_action(packet):
         packet_handler(packet)
-        if save_to_file and file_path:
-            wrpcap(file_path, packet, append=True)
         if time.time() - start_time >= export_interval:
             metrics = analyzer.get_metrics()
             aggregated_data = traffic_aggregator.get_aggregated_data()
