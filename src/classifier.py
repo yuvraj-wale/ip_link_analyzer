@@ -1,4 +1,4 @@
-import re
+import re, os
 import geoip2.database
 from src import settings
 
@@ -6,10 +6,15 @@ def classify_application_protocol(parsed_data):
     protocol = parsed_data.get('protocol')
     src_port = parsed_data.get('source_port')
     dst_port = parsed_data.get('destination_port')
-    payload = parsed_data.get('payload', b'')
+    payload = parsed_data.get('payload', b'')  # Set default to empty bytes
+    # print(parsed_data)
+    # print(payload)
+
+    if payload is None:
+        payload = b''
 
     # Ensure the payload is bytes
-    if isinstance(payload, str):
+    if payload is not None and isinstance(payload, str):
         payload = payload.encode('utf-8', errors='ignore')
 
     # Classify based on TCP ports
@@ -109,7 +114,8 @@ def classify_encryption(parsed_data):
     return 'Unencrypted'
 
 # Initialize the GeoIP2 reader with the path to the database file
-geoip_reader = geoip2.database.Reader(settings.GEOLITE2_DB_PATH)
+GEOLITE2_DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'GeoLite2-Country.mmdb')
+geoip_reader = geoip2.database.Reader(GEOLITE2_DB_PATH)
 
 def classify_country(parsed_data):
     source_ip = parsed_data.get('source_ip')

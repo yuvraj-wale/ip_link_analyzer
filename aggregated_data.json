@@ -1,49 +1,46 @@
 {
     "protocol_counts": {
-        "TCP": 1675,
-        "UDP": 27,
-        "ICMP": 6
+        "TCP": 253,
+        "UDP": 207,
+        "ICMP": 15
     },
     "application_protocol_counts": {
-        "HTTPS": 1601,
-        "HTTPS (TLS Application Data)": 60,
-        "DNS": 6,
-        "DHCP": 2,
-        "RTP": 10,
-        "HTTP": 14,
-        "Unknown": 15
+        "HTTPS": 169,
+        "HTTPS (TLS Application Data)": 82,
+        "DHCP": 151,
+        "RTP": 6,
+        "DNS": 24,
+        "Unknown": 43
     },
     "encryption_counts": {
-        "Encrypted": 1661,
-        "Unencrypted": 47
+        "Encrypted": 251,
+        "Unencrypted": 224
     },
     "country_traffic": {
-        "Unknown-United States": 546,
-        "United States-Unknown": 1000,
-        "Unknown-Unknown": 12,
-        "Unknown-India": 41,
-        "India-Unknown": 50,
-        "Unknown-Germany": 32,
-        "Germany-Unknown": 27
+        "India-Unknown": 33,
+        "Unknown-United States": 82,
+        "Unknown-Unknown": 184,
+        "Unknown-India": 33,
+        "Unknown-None": 42,
+        "None-Unknown": 39,
+        "United States-Unknown": 62
     },
     "port_traffic": {
-        "Unknown-HTTPS": 605,
-        "HTTPS-Unknown": 1071,
-        "Unknown-DNS": 3,
-        "DNS-Unknown": 3,
-        "Unknown-Unknown": 12,
-        "Unknown-HTTP": 8,
-        "HTTP-Unknown": 6
+        "HTTPS-Unknown": 133,
+        "Unknown-HTTPS": 144,
+        "Unknown-Unknown": 174,
+        "Unknown-DNS": 13,
+        "DNS-Unknown": 11
     },
     "traffic_between_countries": {
-        "Traffic not between target countries": 1708
+        "Traffic not between target countries": 475
     },
-    "bytes_per_second": 81084.96309314587,
-    "bits_per_second": 648679.7047451669,
-    "megabits_per_second": 0.6486797047451669,
-    "gigabits_per_second": 0.0006486797047451669,
-    "packets_per_second": 1228.5600468658465,
-    "total_bytes": 66,
-    "total_packets": 1,
-    "encrypted_percentage": 100.0
+    "bytes_per_second": 2285.105730945664,
+    "bits_per_second": 18280.845847565313,
+    "megabits_per_second": 0.018280845847565314,
+    "gigabits_per_second": 1.8280845847565314e-05,
+    "packets_per_second": 6.841763299647585,
+    "total_bytes": 158647,
+    "total_packets": 475,
+    "encrypted_percentage": 52.84210526315789
 }
