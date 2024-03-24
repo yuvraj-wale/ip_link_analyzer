@@ -46,7 +46,7 @@ def capture_start():
     capture.start_capture()
 
 def update_settings(new_settings):
-    settings_path = os.path.join(os.path.dirname(__file__), 'settings.py')
+    settings_path = os.path.join(os.path.dirname(__file__), 'src', 'settings.py')
     with open(settings_path, 'w') as f:
         f.write("# settings.py\n")
         for key, value in new_settings.items():
