@@ -221,7 +221,7 @@ def settings_page():
     if submitted:
         # Update the settings.py file
         st.session_state['capture_started'] = True
-        print("flag capture started == true")
+        # print("flag capture started == true")
         
         new_settings = {
             "CAPTURE_FILTER": capture_filter,
@@ -231,9 +231,9 @@ def settings_page():
             "TARGET_COUNTRIES": target_countries
         }
         update_settings(new_settings)
-        print("settings updated")
+        # print("settings updated")
         st.session_state['page'] = 'metrics'  # Navigate to metrics page
-        print("flag for page set to metrics page")
+        # print("flag for page set to metrics page")
         capture_thread = threading.Thread(target=capture_start)
         capture_thread.start()
         st.rerun() 

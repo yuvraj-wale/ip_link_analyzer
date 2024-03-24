@@ -56,9 +56,9 @@ def start_capture():
         print(f"Capturing on interface: {iface}")  # Display the interface being used
     if filter:
         sniff_kwargs['filter'] = filter
-        
+
     try:
-        print("sniffinggg")
+        # print("sniffinggg")
         sniff(**sniff_kwargs)
     except Exception as e:
         if str(e) != "Capture stopped.":
