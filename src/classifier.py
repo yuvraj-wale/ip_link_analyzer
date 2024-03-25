@@ -1,6 +1,5 @@
 import re, os
 import geoip2.database
-from src import settings
 
 def classify_application_protocol(parsed_data):
     protocol = parsed_data.get('protocol')

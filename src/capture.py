@@ -1,4 +1,4 @@
-from scapy.all import sniff, wrpcap, conf
+from scapy.all import sniff
 import time
 from src import parser, classifier, analyser, aggregator, settings
 

@@ -1,8 +1,5 @@
 import threading
-import time
-import dashboard
 from src import visualizer
-# from dashboard import dashboard
 from src import capture
 
 def start_capture():
