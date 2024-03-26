@@ -5,7 +5,12 @@ from src import parser, classifier, analyser, aggregator, settings
 analyzer = analyser.LinkRateAnalyzer()
 traffic_aggregator = aggregator.TrafficAggregator()  # Create an instance of TrafficAggregator
 
-should_continue_capture = True
+stop_sniffing = False
+
+def stop_filter(packet):
+    # Check the global variable to decide whether to stop sniffing
+    print(stop_sniffing)
+    return stop_sniffing
 
 def packet_handler(packet):
     parsed_data = parser.parse_packet(packet)
@@ -19,8 +24,9 @@ def packet_handler(packet):
 
 def start_capture():
 
-    global should_continue_capture
-    should_continue_capture = True
+    global stop_sniffing
+    stop_sniffing = False
+    print("start captureeeeeeeeeee")
 
     analyzer.start()
     print("Starting packet capture...")
@@ -35,7 +41,7 @@ def start_capture():
     start_time = time.time()
 
     def custom_action(packet):
-        if not should_continue_capture:
+        if stop_sniffing == True:
             raise Exception("Capture stopped.")  # Raise an exception to stop sniffing
         packet_handler(packet)
         if time.time() - start_time >= export_interval:
@@ -49,7 +55,8 @@ def start_capture():
     sniff_kwargs = {
         'prn': custom_action,
         'count': count,
-        'timeout': timeout
+        'timeout': timeout,
+        'stop_filter': stop_filter
     }
     if iface:
         sniff_kwargs['iface'] = iface
@@ -59,27 +66,36 @@ def start_capture():
 
     try:
         # print("sniffinggg")
+        print(sniff_kwargs)
         sniff(**sniff_kwargs)
+        print("sfterrr snifffinggg reached")
     except Exception as e:
-        if str(e) != "Capture stopped.":
-            raise  # Reraise the exception if it's not the expected one
+        print("sfterrr snifffinggg reached 2")
+        # Export any remaining data at the end of the capture
+        metrics = analyzer.get_metrics()
+        aggregated_data = traffic_aggregator.get_aggregated_data()
+        # print(f"Final traffic metrics: {metrics}")
+        # print(f"Final aggregated data: {aggregated_data}")
+        traffic_aggregator.export_to_json('aggregated_data.json')
 
-    # Export any remaining data at the end of the capture
-    metrics = analyzer.get_metrics()
-    aggregated_data = traffic_aggregator.get_aggregated_data()
-    # print(f"Final traffic metrics: {metrics}")
-    # print(f"Final aggregated data: {aggregated_data}")
-    traffic_aggregator.export_to_json('aggregated_data.json')
-
-    analyzer.stop()
+        print("reached end of thread 1")
+        analyzer.stop()
+        print("reached end of thread2")
+        return
+        # if str(e) != "Capture stopped.":
+        #     raise  # Reraise the exception if it's not the expected one
 
 def stop_capture():
     """
     Stops the packet capture process.
     """
-
-    global should_continue_capture
-    should_continue_capture = False
+    print("reacheddddd stoppp captureeee")
+    global stop_sniffing
+    print(stop_sniffing)
+    stop_sniffing = True
+    print(stop_sniffing)
+    # global should_continue_capture
+    # should_continue_capture = False
 
 if __name__ == "__main__":
     start_capture()

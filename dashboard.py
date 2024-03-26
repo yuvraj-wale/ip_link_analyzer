@@ -35,7 +35,19 @@ def clear_aggregated_data():
         """)
 
 def stop_processes():
+    # global capture_thread
+    # if capture_thread is not None and capture_thread.is_alive():
+    #     print("Stopping capture thread...")
+    #     capture.stop_capture()
+    #     capture_thread.join()
+    #     print("Capture thread stopped.")
+    # else:
+    #     print("Capture thread is not active.")
+
     capture.stop_capture()
+
+    # global capture_thread
+    # capture_thread.join
     clear_aggregated_data()
     st.session_state['page'] = 'settings'
     st.success("Processes stopped.")
@@ -44,6 +56,8 @@ def stop_processes():
 def capture_start():
     clear_aggregated_data()
     capture.start_capture()
+    print("finisheddd start captureeeeee")
+    return
 
 def update_settings(new_settings):
     settings_path = os.path.join(os.path.dirname(__file__), 'src', 'settings.py')
@@ -129,6 +143,7 @@ def display_metrics_analysis():
 
         time.sleep(5)  # Refresh data every 5 seconds
         st.rerun()
+
 
     # # Create placeholders for the metrics analysis
     # protocol_counts_placeholder = st.empty()
@@ -231,11 +246,16 @@ def settings_page():
             "TARGET_COUNTRIES": target_countries
         }
         update_settings(new_settings)
-        # print("settings updated")
+        print("settings updated")
         st.session_state['page'] = 'metrics'  # Navigate to metrics page
         # print("flag for page set to metrics page")
+        global capture_thread
         capture_thread = threading.Thread(target=capture_start)
+        s=capture_thread.getName
+        print("ceckkkkk :")
+        print(s)
         capture_thread.start()
+        print("threaddd starteddd")
         st.rerun() 
 
 def main():
