@@ -9,7 +9,7 @@ stop_sniffing = False
 
 def stop_filter(packet):
     # Check the global variable to decide whether to stop sniffing
-    print(stop_sniffing)
+    # print(stop_sniffing)
     return stop_sniffing
 
 def packet_handler(packet):
@@ -26,7 +26,7 @@ def start_capture():
 
     global stop_sniffing
     stop_sniffing = False
-    print("start captureeeeeeeeeee")
+    # print("start captureeeeeeeeeee")
 
     analyzer.start()
     print("Starting packet capture...")
@@ -36,7 +36,7 @@ def start_capture():
     export_interval = 5  # Interval in seconds for exporting data
     iface = settings.CAPTURE_INTERFACE
 
-    print(f"Capturing on interface: {iface}")  # Display the interface being used
+    # print(f"Capturing on interface: {iface}")  # Display the interface being used
 
     start_time = time.time()
 
@@ -66,11 +66,11 @@ def start_capture():
 
     try:
         # print("sniffinggg")
-        print(sniff_kwargs)
+        # print(sniff_kwargs)
         sniff(**sniff_kwargs)
-        print("sfterrr snifffinggg reached")
+        # print("sfterrr snifffinggg reached")
     except Exception as e:
-        print("sfterrr snifffinggg reached 2")
+        # print("sfterrr snifffinggg reached 2")
         # Export any remaining data at the end of the capture
         metrics = analyzer.get_metrics()
         aggregated_data = traffic_aggregator.get_aggregated_data()
@@ -78,9 +78,9 @@ def start_capture():
         # print(f"Final aggregated data: {aggregated_data}")
         traffic_aggregator.export_to_json('aggregated_data.json')
 
-        print("reached end of thread 1")
+        # print("reached end of thread 1")
         analyzer.stop()
-        print("reached end of thread2")
+        # print("reached end of thread2")
         return
         # if str(e) != "Capture stopped.":
         #     raise  # Reraise the exception if it's not the expected one
@@ -89,11 +89,11 @@ def stop_capture():
     """
     Stops the packet capture process.
     """
-    print("reacheddddd stoppp captureeee")
+    # print("reacheddddd stoppp captureeee")
     global stop_sniffing
-    print(stop_sniffing)
+    # print(stop_sniffing)
     stop_sniffing = True
-    print(stop_sniffing)
+    # print(stop_sniffing)
     # global should_continue_capture
     # should_continue_capture = False
 

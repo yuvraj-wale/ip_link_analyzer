@@ -56,7 +56,7 @@ def stop_processes():
 def capture_start():
     clear_aggregated_data()
     capture.start_capture()
-    print("finisheddd start captureeeeee")
+    # print("finisheddd start captureeeeee")
     return
 
 def update_settings(new_settings):
@@ -246,16 +246,16 @@ def settings_page():
             "TARGET_COUNTRIES": target_countries
         }
         update_settings(new_settings)
-        print("settings updated")
+        # print("settings updated")
         st.session_state['page'] = 'metrics'  # Navigate to metrics page
         # print("flag for page set to metrics page")
         global capture_thread
         capture_thread = threading.Thread(target=capture_start)
-        s=capture_thread.getName
-        print("ceckkkkk :")
-        print(s)
+        # s=capture_thread.getName
+        # print("ceckkkkk :")
+        # print(s)
         capture_thread.start()
-        print("threaddd starteddd")
+        # print("threaddd starteddd")
         st.rerun() 
 
 def main():
